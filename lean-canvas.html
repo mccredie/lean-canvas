@@ -1,0 +1,182 @@
+<html>
+<body>
+<div id="md">
+<div class="section" id="problem">
+Top 3 problems
+
+For the customer segment you are working with, describe the top 1-3 problems they need solved.
+</div>
+<div class="section" id="solution">
+Top 3 features
+
+Don’t fully defining a solution. Simply sketch out the top features or capabilities for each problem.
+</div>
+<div class="section" id="key-metrics">
+Key activities you measure
+</div>
+<div class="section" id="unique-value-proposition">
+Single, clear, compelling message that states why you are different and worth paying attention
+
+A good UVP gets inside the head of your customers and focusses on the benefits your customers derive after using your product.
+</div>
+<div class="section" id="unfair-advantage">
+Can’t be easily copied or bought
+</div>
+<div class="section" id="channels">
+Path to customers
+
+Inbound and Outbound
+
+Direct and Indirect
+</div>
+<div class="section" id="customer-segments">
+Target customers
+
+A customer is a someone that pays for your product.
+
+
+You can’t effectively build, design, and position a product for everyone.
+</div>
+<div class="section" id="cost-structure">
+Customer Acquisition costs
+Distribution costs
+Hosting
+People, etc.
+</div>
+<div class="section" id="revenue-streams">
+Revenue Model
+Life Time Value
+Revenue
+Gross Margin
+</div>
+</div>
+
+<div id="canvas"></div>
+</body>
+<script type="text/javascript" src="https://cdn.rawgit.com/showdownjs/showdown/1.8.6/dist/showdown.min.js"></script>
+<script type="text/javascript">
+  var converter = new showdown.Converter();
+  var canvas = document.getElementById("canvas");
+  var md = document.getElementById("md");
+  var sections = md.querySelectorAll(".section");
+  sections.forEach(function(section) {
+    var content = section.textContent;
+    var html = converter.makeHtml(content);
+    var out = document.createElement("div");
+    out.id = section.id + "-out";
+    out.innerHTML = html;
+    out.className = "section";
+    canvas.appendChild(out);
+  });
+</script>
+<style>
+#md {
+  display: none;
+}
+
+body {
+  width: 100%;
+  padding-bottom: 71%;
+  position: relative:
+}
+
+#canvas {
+  position: absolute;
+  top: 0; bottom: 0; left: 0; right: 0;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 2fr 2fr 1fr 1fr 2fr 2fr;
+}
+
+#problem-out {
+  grid-column: 1 / 1;
+  grid-row: 1 / span 2;
+}
+
+#canvas .section {
+  border: 1px solid black;
+  background: linear-gradient(#fff, #eee);
+}
+
+#canvas .section::before {
+  font-family: sans-serif;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+#problem-out::before {
+  content: "Problem";
+}
+
+#solution-out {
+  grid-column: 2 / 2;
+  grid-row: 1 / 1;
+}
+
+#solution-out::before {
+  content: "Solution";
+}
+
+#key-metrics-out {
+  grid-column: 2 / 2;
+  grid-row: 2 / 2;
+}
+
+#key-metrics-out::before {
+  content: "Key Metrics";
+}
+
+#unique-value-proposition-out {
+  grid-column: 3 / span 2;
+  grid-row: 1 / span 2;
+}
+
+#unique-value-proposition-out::before {
+  content: "Unique Value Proposition";
+}
+
+#unfair-advantage-out {
+  grid-column: 5 / 5;
+  grid-row: 1 / 1;
+}
+
+#unfair-advantage-out::before {
+  content: "Unfair Advantage";
+}
+
+#channels-out {
+  grid-column: 5 / 5;
+  grid-row: 2 / 2;
+}
+
+#channels-out::before {
+  content: "Channels";
+}
+
+#customer-segments-out {
+  grid-column: 6 / 6;
+  grid-row: 1 / span 2;
+}
+
+#customer-segments-out::before {
+  content: "Customer Segments";
+}
+
+#cost-structure-out {
+  grid-column: 1 / span 3;
+  grid-row: 3 / 3;
+}
+
+#cost-structure-out::before {
+  content: "Cost Structure";
+}
+
+#revenue-streams-out {
+  grid-column: 4 / span 3;
+  grid-row: 3 / 3;
+}
+
+#revenue-streams-out::before {
+  content: "Revenue Streams";
+}
+</style>
